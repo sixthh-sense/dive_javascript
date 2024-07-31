@@ -1,0 +1,24 @@
+div {
+    width: 100px;
+    height: 100px;
+    background-color: #3d405b;
+    border: 2px solid black;
+    margin: 10px;
+    display: inline-block;
+}
+
+#middle {
+    background-color: #81b29a;
+}
+
+#static #middle {
+    position: static;
+    /* static 일 땐 top/right/bottom/left/z-index 같은 property가 영향 없음 */
+    top: 100px;
+}
+
+#relative #middle {
+    position: relative;
+    top: 100px;
+
+}
