@@ -19,6 +19,30 @@ div {
 
 #relative #middle {
     position: relative;
+    /* 음수값을 넣으면 0 기준으로 ←왼쪽으로 간격을 준다 */
+    /* px 외 다른 단위도 입력 가능 */
     top: 100px;
+    left: 100px;
+}
 
+/* #absolute #middle 의 가장 가까운 조상 역할. 미지정시 #absolute #middle 은 최상위 containing block, 즉 body를 참조하게 됨 */
+#absolute {
+    position: relative;
+}
+
+#absolute #middle {
+    /* absolute position은 문서 흐름에서 제거? */
+    position: absolute;
+    /* 기준은 가장 가까운 조상, 조상이 없다면 초기 containing block(즉, body) 기준 :: 상대적인 위치 */
+    top: 50px;
+    left: 50px;
+}
+
+#fixed #middle {
+    /* 배치되는 위치는 '항상' container에 상대적. 그래서 스크롤을 이동시킬 때 고정행 등에 적용하는 경우가 많음 */
+    /* absolute와 유사하나 fixed가 부모 요소 고려x 한다는 점이 다름 */
+    /* 여기서 아주 살짝 변한 게 sticky: 가만히 있다가 스크롤바 내려가기 시작하면 꼭 붙어다님 */
+    position: fixed;
+    top: 10px;
+    left: 10px;
 }
