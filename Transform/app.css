@@ -1,0 +1,81 @@
+h1 {
+    background-color: #2a9d8f;
+    border: 5px solid #264653;
+    color: #eae2b7;
+    padding: 0.7em;
+    width: 300px;
+    font-size: 1.8em;
+    text-align: center;
+    /* 위아래 20px 왼오른 auto(동일) 설정 */
+    margin: 20px auto;
+    font-family: Courirer New;
+    font-weight: lighter;
+}
+
+h1:nth-of-type(2n) {
+    background-color: #e9c46a;
+}
+
+h1:nth-of-type(3n) {
+    background-color: #f4a641;
+}
+
+h1:nth-of-type(4n) {
+    background-color: #e76f51;
+}
+
+section:first-of-type h1:nth-of-type(1) {
+    /* 그냥 h1:nth-of-type(1)이라고 해버리면 section'당' 첫번째 요소를 잡음 */
+    /* section:first-of-type까지 있으면 첫번째 section 아래에 있는 첫번째 h1 요소만 잡음 */
+    /* default 회전축은 요소 중앙. 평면 */
+    transform: rotate(45deg);
+
+    /* 축을 오른아래쪽에 두고 회전시키기 */
+    transform-origin: bottom right;
+
+    /* 3d 회전 properties: rotate3d(), rotateX(), rotateY(), rotateZ() */
+}
+
+section:first-of-type h1:nth-of-type(2) {
+    /* 크기 변경(x, y축 모두) */
+    transform: scale(0.7);
+    /* 크기 변경(x, y축 따로) */
+    transform: scale(2, 1);
+    /* 크기 변경(x축, y축 지정) :: scaleY는 y축, x축은 scaleX */
+    transform: scaleY(2);
+}
+
+/* translate은 요소를 움직이는 기능 */
+section:first-of-type h1:nth-of-type(3) {
+    /* x축으로 얼마만큼 이동 */
+    transform: translateX(200px);
+}
+
+section:first-of-type h1:nth-of-type(4) {
+    /* 위치이동 x축, y축 */
+    transform: translate(-100px, 50px);
+}
+
+section:nth-of-type(2) h1:nth-of-type(1) {
+    /* 기울이기 변형 */
+    transform: skew(30deg);
+}
+
+section:nth-of-type(2) h1:nth-of-type(2) {
+    /* 기울이기 변형 */
+    transform: skew(10deg, 5deg);
+}
+
+section:nth-of-type(2) h1:nth-of-type(3) {
+    /* 회전 && 확대(scale>1) */
+    transform: rotate(-20deg) scale(1.3);
+}
+
+section:nth-of-type(2) h1:nth-of-type(4) {
+    transform: translateX(-300px) rotate(0.5turn) scaleY(1.5);
+}
+
+/* 2번째 section 전체 적용 */
+section:nth-of-type(2) {
+    transform: scale(0.7) translateX(500px);
+}
