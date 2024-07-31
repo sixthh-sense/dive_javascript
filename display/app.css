@@ -1,0 +1,38 @@
+h1 {
+    background-color: palegoldenrod;
+    border: 1px solid black;
+    width: 300px;
+    height: 200px;
+    padding: 50px;
+    margin: 100px;
+    display: none;
+    /* block 요소는 width, height 유효 */
+    /* display none을 하면 문서에는 여전히 있지만 보이지 않게 됨 */
+}
+
+div {
+    height: 200px;
+    width: 200px;
+    background-color: olivedrab;
+    border: 5px solid black;
+    display: inline-block;
+    margin: 50px;
+    /* inline처럼 나란히 가되 width, height, margin, padding 고려. 크기가 먹힌다 */
+}
+
+/* span {
+    background-color: paleturquoise;
+    border: 1px solid black;
+    display: block;
+} */
+
+span {
+    background-color: palevioletred;
+    border: 1px solid black;
+    width: 500px;
+    /* inine 요소는 너비/높이 무시 */
+    padding: 50px;
+    /* inline 요소는 padding은 고려 */
+    margin: 50px;
+    /* 세로 방향은 무시되고 가로 방향으로만 적용 */
+}

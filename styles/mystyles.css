@@ -1,0 +1,29 @@
+* {
+    /* color: pink;
+    background-color: cyan; */
+}
+
+/* id 선택자는 # class 선택자는 . */
+
+/* 다중 선택: shift + alt(드래그) alt + click(좀좀따리 선택하기) */
+
+h2 {
+    color: teal;
+    background-color: plum;
+    /* background-color가 background보다 좁은 개념: 색상만 변경 */
+}
+
+button {
+    color: magenta;
+    /* semicolon 중요: 특성 선언을 마치고 다음으로 넘어가겠다는 선언 */
+    background-color: cyan;
+}
+
+p {
+    color: olive;
+    background: orange;
+}
+
+body {
+    background-color: #c5e;
+}

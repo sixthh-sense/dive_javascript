@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marathon Race Registration Form</title>
+</head>
+
+<body>
+    <h1>Race Registration!</h1>
+    <form action="/somewhere"><!--parameter test할 땐 method get, 실제 사용할 땐 method post(url 노출은 위험해)-->
+        <p>
+            <label for="first_name">First Name</label><input type="text" id="first_name" name="first_name" required>
+            <label for="last_name">Last Name</label><input type="text" id="last_name" name="last_name" required>
+        </p>
+        <p>
+        <h2>Select a Race:</h2>
+        </p>
+        <p>
+            <input type="radio" name="race_type" id="funRun" value="funRun" required>
+            <!--id는 숫자로 시작하면 안 된다는 점을 주의 & radio value property 안 빼먹게 조심-->
+            <!--같은 name을 가진 radio group 끼리 required 선언 한번만 해줘도 ok(출처: https://stackoverflow.com/questions/8287779/how-to-use-the-required-attribute-with-a-radio-input-field)-->
+            <label for="funRun">Fun Run 5k</label>
+            <br />
+            <input type="radio" name="race_type" id="halfM" value="halfM">
+            <label for="halfM">Half Marathon</label>
+            <br />
+            <input type="radio" name="race_type" id="fullM" value="fullM">
+            <label for="fullM">Full Marathon</label>
+        </p>
+        <p>
+            <!--input type이 email이면 자동으로 @, . 등의 유효성 검사가 진행됨
+            input type password는 암호 유효성 검사는 딱히 진행하지 않고 대신 마스킹 처리가 진행되어서 나옴-->
+            <label for="email">Email </label><input type="email" id="email" name="email" required>
+            <label for="password">Password </label><input type="password" id="password" name="password" required>
+        </p>
+        <p>
+            <label for="age_group">Select Age Group</label>
+            <select name="age_group" id="age_group">
+                <!-- <option value=""></option> 이런 식으로 '빈' 필드가 있을 경우 select tag에도 required property를 지정하는 의미가 생김-->
+                <option value="underage">under 18</option>
+                <option value="youngster">18 - 30</option>
+                <option value="adult">30 - 50</option>
+                <option value="senior">50+</option>
+            </select>
+        </p>
+        <!--Q. select, radio를 필수적으로 하나 선택하게 만드는 설정은 딱히 없나? 그냥 javascript쪽에서 처리해야 하나?-->
+        <button>Register!</button>
+    </form>
+
+</body>
+
+</html>

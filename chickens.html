@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<!--semantic markup이 중요한 이유: clean coding 개념인 것 같은데 div만 줄줄이 써내는 것보다 div와 유사한 역할을 하지만 header section 같은 태그를 써서 뭐가 무슨 역할을 하는지 직관적으로 이해하기 쉽게끔 코드를 작성하는 것-->
+
+<head>
+    <title>Chicken - Wikipedia</title>
+</head>
+
+<body>
+    <nav> <!--navigator tag-->
+        <ul>
+            <li>
+                <a href="home">Home</a>
+            </li>
+            <li>
+                <a href="about.html">About</a>
+            </li>
+            <li>
+                <a href="contact">Contact</a>
+            </li>
+        </ul>
+    </nav>
+
+    <!--section tag는 직관적으로 section을 나타내는 태그라고 생각하면 ok. div처럼 온갖 데 쓰이는 애지만 div보다는 범위가 살짝 좁아서 section을 쓰는 게 살짝 더 나은 그런 관계. 영어로는 generic-->
+    <!--article tag 도 비슷~ 비슷~ 내용을 그룹으로 묶을 때 쓰임. 말 그대로 article을 나타낼 때 쓰겠지, 일기예보 등에서 많이 쓰인다고 함-->
+    <!--aside tag는 옆쪽에 내용을 쓰고 싶을 때 쓰는 태그-->
+    <!--header :: 머리말-->
+    <!--footer :: 꼬리말-->
+    <!--time :: 실질적으로는 강조 역할, 보통 시간 강조할 때 많이 쓰임, datetime property :: semantic 요소의 일종이며 datetime 실제 value를 지정하는 곳-->
+    <!--figure :: 강조할 내용, figcaption :: 사진의 제목 같은 아이-->
+    <!--abbr :: abbreviation 요소-->
+
+    <!--예약어를 피하고 싶을 때 우리는 entity code를 쓴다 :: 무엇이 entity code에 해당하는지는 검색하면 따로 나오기도 하고 강의에서 제공하는 링크도 있고...-->
+    <!--아무튼 <와 &는 주의할 필요가 있다. &는 브라우저가 url에 값 전달하는 애로 해석할 우려가 있음-->
+    <!-- <h1>1 &lt; 6 &gt; 5 &amp; &spades; &hearts;</h1> -->
+    <main> <!--main요소는 한 페이지의 주요 내용을 설명할 때 쓰는 아이(요소)-->
+        <h1 id="firstHeading" class="firstHeading mw-first-heading"><span class="mw-page-title-main">Chicken</span></h1>
+
+        <hr> <!--가로로 긴 구분선 표시하는 기능. 열고닫는 개념 아님-->
+        <h2>Auguries of Innocence</h2>
+        <p>
+            To see a World in a Grain of Sand<br> <!--br 태그 없으면 그냥 한줄로 나와버림-->
+            And a Heaven in a Wild Flower <br>
+            Hold Infinity in the palm of your hand <br>
+            And Eternity in an hour<br>
+            A Robin Red breast in a Cage<br>
+        </p>
+
+        <!--Windows 주석 단축키: Ctrl + / (Microsoft 자판인지 꼭 확인하기)-->
+        <!--img tag :: 열고 닫을 필요x url만 제공하면 장땡, src: 이미지 위치 표시하는 property, 파일명&확장자&위치 조심-->
+        <!--같은 폴더일 땐 파일명과 확장자만 명시해주면 ok, 다른 폴더일 땐 html 파일이 있는 폴더를 기준으로 이미지 파일이 있는 경로를 명시-->
+        <!--width, height 속성을 통해 크기 조정 가능, width="200px" 식으로-->
+        <!--alt 속성은 이미지에 제목 지어주는 감각, 사용자가 스크린 리더를 사용할 경우 alt 속성에 적힌 내용을 읽는다. = Alt attribute will be read by screenreader-->
+        <img src="pictures/Male_and_female_chicken_sitting_together.jpg" alt="couple chicken">
+        <br></br> <!--줄바꿈. <br/>도 괜찮음-->
+
+        <!--anchor tag :: INLINE TAG라서 줄바꿈X 나머지 콘텐츠의 흐름을 끊지 않음(마치 볼드 처리 요소처럼?)-->
+        <a href="http://www.google.com">LINK TO GOOGLE</a> <!--속성 href: 링크할 url 주소 (hypertext reference -> h ref)-->
+        <!--http && www을 붙여야 world wide web이란 걸 알아먹음(없으면 로컬 파일에서 검색?)-->
+        <a href="about.html">ABOUT PAGE</a> <!-- 동일한 폴더에 존재 -->
+
+        <p>The <b>chicken</b> (<i><b>Gallus domesticus</b></i>) is a large and round short-winged <a
+                href="https://en.wikipedia.org/wiki/Bird" title="Bird">bird</a>, <a
+                href="https://en.wikipedia.org/wiki/Domestication" title="Domestication">domesticated</a> from the <a
+                href="https://en.wikipedia.org/wiki/Red_junglefowl" title="Red junglefowl">red junglefowl</a> of <a
+                href="https://en.wikipedia.org/wiki/Southeast_Asia" title="Southeast Asia">Southeast Asia</a> around
+            8,000
+            years ago. Most chickens are raised for food,
+            providing <a href="https://en.wikipedia.org/wiki/Chicken_as_food" title="Chicken as food">meat</a> and <a
+                href="https://en.wikipedia.org/wiki/Egg_as_food" class="mw-redirect" title="Egg as food">eggs</a>;
+            others
+            are kept as <a href="https://en.wikipedia.org/wiki/Pet" title="Pet">pets</a> or for <a
+                href="https://en.wikipedia.org/wiki/Cockfight" title="Cockfight">cockfighting</a>.
+        </p>
+
+        <!--sup 태그는 위쪽 첨자 태그, sub 태그는 아래쪽 첨자 태그-->
+        <p>Chickens are common and widespread domestic animals, with a total population of 23.7 billion as of 2018<sup
+                class="plainlinks noexcerpt noprint asof-tag update" style="display:none;"><a class="external text"
+                    href="https://en.wikipedia.org/w/index.php?title=Chicken&amp;action=edit">[update]</a></sup>, and an
+            annual production of more than 50 billion birds. A hen bred for laying can produce over 300 eggs per year.
+            There
+            are numerous <a href="https://en.wikipedia.org/wiki/Cultural_references_to_chickens"
+                title="Cultural references to chickens">cultural
+                references to chickens</a> in folklore, religion, and literature.
+        </p>
+
+        <h2>Breeds of Chickens</h2>
+        <ul> <!-- ul: 순서가 없는 목록 / ol: 순서가 있는 목록 -->
+            <li>Bantam <!-- 스몰사이즈 닭 종류 -->
+                <ul>
+                    <li>Silkie</li> <!-- 자식요소 --> <!--notepad++ extension 있어서 한줄복사 Ctrl + D -->
+                    <li>Polish</li> <!--li 태그 안에는 다양한 요소 넣는 게 가능함. 목록 안의 목록도 ok-->
+                </ul>
+            </li>
+            <li>Standard <!--일반사이즈 닭 종류-->
+                <ul>
+                    <li>Easter Egger</li>
+                    <li>Rhode Island Red</li>
+                </ul>
+            </li>
+        </ul>
+    </main>
+
+    <!--인터넷에 올린 이미지 -> "이미지 주소 복사"로 src property에 해당하는 내용을 가져올 수 있다-->
+    <img
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Newly-hatched_chickens.jpg/330px-Newly-hatched_chickens.jpg">
+
+    <!--sup 태그는 위쪽 첨자 태그, sub 태그는 아래쪽 첨자 태그-->
+    <h2>I like H<sub>2</sub>O</h2>
+    <p><sup>1</sup>/<sub>2</sub> + <sup>1</sup>/<sub>2</sub> = 1</p>
+</body>
+
+
+</html>

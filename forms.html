@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms Demo</title>
+</head>
+
+<body>
+    <h1>Forms Demo</h1>
+    <!-- <button>OUTSIDE FORM!</button> -->
+    <!--form : action이 비었을 땐 말 그대로 빈 form. 생성x-->
+    <!--action property: form을 보낼 주소-->
+    <!--method property: get/post 명시-->
+    <!--autocomplete property: 자동완성? 잘 모르겠음-->
+    <!--action에 /문자열/ 식으로 적혀있으면 기본 url 주소 + / 문자열 / 경로로 이동한다-->
+    <form action="/tacos">
+        <!--input은 닫는 태그 없음, type 속성으로 데이터 종류 지정-->
+        <!--placeholder property: input값이 없을 때 기본적으로 출력되는 내용-->
+        <!--label은 어떤 태그에 붙이는 식별용 태그: 스크린 리더가 그 둘의 관계를 알아먹게끔 해준다, 두 요소를 연결할 수도 있게도 해준다(label태그를 클릭하면 label과 연결된 input이 자동으로 활성화된다)-->
+        <!--id property: 중복 불가, label태그의 for property가 가리키는 대상-->
+        <!--label태그에 for property를 굳이 지정하지 않고 label 태그 안에 label 태그랑 이어줄 input 등을 위치시켜주는 방법도 있음-->
+        <!--단, type checkbox 의 경우 label 태그는 준필수 :: checked 표시하면 처음부터 체크된 채로 보임-->
+        <button type="button">PLZ DO NOT SUBMIT THE FORM</button> <!--type 이 button이면 평범한 버튼(폼 제출하지 않는)이라는 뜻-->
+        <p>
+            <label for="username">Enter a Username:</label>
+            <input id="username" type="text" placeholder="username" name="username">
+            <!--name property: 데이터를 서버로 전송할 때 사용되는 것-->
+        </p>
+        <button>IN THE MIDDLE~~</button>
+        <p>
+            <label for="password">Enter your password: </label>
+            <input id="password" type="password" placeholder="password" name="password">
+        </p>
+        <p>
+            <label for="color">Select a Color:</label>
+            <input type="color" id="color" name="color">
+        </p>
+        <p>
+            <label for="number">Enter a number:</label>
+            <input type="number" placeholder="Enter a number" id="number" name="num"> <!--여기도 min, max, step 적용 가능-->
+        </p>
+        <button>Submit</button> <!--form을 제출하지 않겠다고 따로 명시하지 않는 이상 제출이 default :: type="submit"이 기본값-->
+        <input type="submit" value="Click me!"> <!--also submits the form-->
+    </form>
+    <hr>
+    <!--outside of a form, no default behavior-->
+    <button>Not Inside Form</button>
+    <h2>Hijacking Searches★</h2>
+    <h3>Search Reddit</h3>
+    <form action="https://www.reddit.com/search">
+        <input type="text" name="q">
+        <button>Search Reddit</button>
+    </form>
+    <h3>Search Google</h3>
+    <form action="https://www.google.com/search">
+        <input type="text" name="q">
+        <button>Search Google</button>
+    </form>
+    <h3>Search YouTube</h3>
+    <form action="https://www.youtube.com/results">
+        <input type="text" name="search_query"> <!--button이 없어도 Enter 누르면 요청이 간다-->
+        <button>Search YouTube</button>
+    </form>
+
+    <h2>More Inputs!</h2>
+    <form action="/birds">
+        <input type="checkbox" name="agree_tos" id="agree" checked>
+        <label for="agree">I agree to everything</label>
+        <p> <!--같은 항목에 대한 radio를 나타내고 싶다면 name property를 동일하게 설정해야 한다-->
+            <label for="xs">XS:</label>
+            <input type="radio" name="size" id="xs" value="xs">
+            <!--form 눌렀을 때 radio 식별값은 value :: value가 없으면 모조리 on으로 통일됨-->
+            <label for="s">S:</label>
+            <input type="radio" name="size" id="s" value="s">
+            <label for="m">M:</label>
+            <input type="radio" name="size" id="m" value="m">
+        </p>
+        <p>
+            <label for="meal">Please Select an Entree</label>
+            <select name="meal" id="meal">
+                <option value="fish">Fish</option>
+                <option value="veg" selected>Vegeterian</option>
+                <option value="steak">Steak</option>
+            </select>
+        </p>
+        <p>
+            <label for="cheese">Amount of Cheese:</label>
+            <!--step property: 초기값에서 step만큼 상승/하강, value property: range input에서는 초기값-->
+            <input type="range" name="cheese_level" id="cheese" min="1" max="100" step="7">
+        </p>
+        <p>
+            <label for="requests">Any special requests?</label>
+            <br />
+            <textarea name="requests?" id="requests" rows="10" cols="20" placeholder="Type something here"></textarea>
+        </p>
+
+        <button>Submit</button>
+
+
+        <h2>Validations Demo</h2>
+        <form action="/dummy">
+            <!--required 속성: 필수 항목 지정-->
+            <label for="first">Enter your First Name</label>
+            <input type="text" name="first" id="first" required minlength="5" maxlength="20">
+            <p>
+                <label for="username">Username</label>
+                <input type="text" name="username" id="username" required minlength="5" maxlength="20">
+            </p>
+            <p>
+                <input type="email" required>
+                <input type="url">
+            </p>
+
+            <button>Submit</button>
+        </form>
+    </form>
+</body>
+
+</html>
