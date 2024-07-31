@@ -1,0 +1,27 @@
+section {
+    width: 500px;
+    height: 500px;
+    background-color: magenta;
+}
+
+#rgba {
+    width: 50%;
+    height: 50%;
+
+    /* 기능은 같지만 RGBA가 더 편해서 그쪽이 상대적으로 자주 쓰이는 편 */
+
+    /* background-color: 배경 색상에만 영향을 줌 */
+    /* rgba의 alpha 부분이 배경색 흐릿하게/선명하게 설정 */
+    background-color: rgba(255, 255, 255, 0.7);
+    /* rgba 대신 16진법으로도 설정 가능. 색상코드 끄트머리에 붙이면 되고 00 완전 투명 ~ FF 완전 불투명(참고: 16^2 = 256) */
+
+    /* background-color: #00cca0B3; */
+}
+
+#opacity {
+    width: 50%;
+    height: 50%;
+    background-color: yellow;
+    /* opacity: 전체 요소를 투명하게/불투명하게 변화(0이 완전 투명, 1이 완전 불투명) */
+    opacity: 0.5;
+}
