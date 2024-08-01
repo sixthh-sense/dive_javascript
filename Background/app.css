@@ -1,0 +1,25 @@
+section {
+    width: 80%;
+    height: 800px;
+    /*background-color: purple;*/
+    /* 컴퓨터에 저장한 이미지의 상대 경로를 명시한다. 폴더에서 한번 위로 간 쪽(dive_javascript)의 자식인 pictures폴더 하위 이미지 */
+    /*background-image: url("../pictures/engineer_samsung_memory.jpg");*/
+    /* 이미지 링크 복사한 것을 url property에 지정한다 :: 우클릭 > 이미지 주소 복사 */
+    /*background-image: url("https://images.unsplash.com/photo-1721332149274-586f2604884d?q=80&w=1336&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");*/
+    /* background-size 속성: cover(비율 유지, 잘림 있음)/contain(비율 유지, 이미지 잘림 없이 최대한 꽉 차게)/auto */
+    /*background-size: cover;*/
+    /* background-repeat: repeat-x / repeat / space / round / no-repeat / space repeat */
+    /* background-position: 배경이미지 시작점(위치) 정해줌 -> top / left / center / 25% 75% / bottom 50px right 100px / right 35% bottom 45% */
+    /*background-position: bottom;*/
+    /* background -> 세부적인 설정 다 합쳐서 한꺼번에 설정 가능 / 순서는 'generally' 상관이 없음...? 괜히 불안해지게 만드는군 */
+    /* 예외상황: background-size를 지정할 땐 position/nn% 형식을 지켜야 함  >> center cover 하면 break 되지만 center/cover 하면 trendy하게 이미지가 나타나버림 */
+    background: center/40% no-repeat url("https://images.unsplash.com/photo-1721332149274-586f2604884d?q=80&w=1336&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"), burlywood;
+
+    margin: 0 auto;
+}
+
+
+h1 {
+    font-size: 100px;
+    color: white;
+}
