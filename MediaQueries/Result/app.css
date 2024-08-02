@@ -6,15 +6,27 @@ h1 {
     font-size: 6em;
     text-align: center;
 }
+
 nav {
     font-size: 1.5em;
 }
 
-ul,li {
+ul,
+li {
     display: inline;
     margin: 0;
     padding: 0;
 }
 
-
-
+/* media 조건이 ()안에 있는 것과 맞아떨어질 때 중괄호 안에 있는 설정값으로 변한다 */
+/* width는 아무도 설정하는 사람이 없는 괴악한 설정일 거고(easter egg 설정할 때는 의미가 있을지도)
+보통은 최소값, 최대값 둬서 조건을 정하는 편... 현실적으로 그렇겠지
+min-width는 최소 너비값, max-width는 최대 너비값 */
+/* and 조건도 주는 게 가능하네? */
+/* @media 조건 css 도 순서 따지니까 주의! */
+/* orientation: landscape은 가로 방향이라는 의미 */
+@media(min-width: 600px) and (max-width: 800px) {
+    h1 {
+        color: purple;
+    }
+}
