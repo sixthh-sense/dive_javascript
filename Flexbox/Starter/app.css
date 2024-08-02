@@ -9,22 +9,30 @@ h1 {
 #container {
     background-color: #003049;
     width: 90%;
+
     /* 1200px로 설정하면 공간이 남기도 함(아래는 200px짜리 5개니까 200px이 남음) */
-    height: 500px;
+    /* height: 500px; */
+
     margin: 0 auto;
     border: 5px solid #003049;
+
     /* flexbox container 내부 요소들은 기본이 좌우정렬? :: main axis 좌우, cross axis 상하 */
     display: flex;
+
     /* flex-direction :: container 안에서 본축 방향을 결정하는 속성, 기본값은 row, row-reverse는 방향 반대 */
     /* row / row-reverse / column / column-reverse */
     flex-direction: row;
+
     /* justify-content(정렬 방향):: 주축을 따름 :: (default) flex-start(주축 시작점) / flex-end(주축 끝점) / center(중간) / space-between(바깥쪽 여백 다 없애고 요소간 여백 남김, 여백간 간격은 동일) / space-around(바깥쪽 여백, 요소간 여백 남김, 여백간 간격은 거의 동일) / space-evenly(space-around 속성에 여백간 간격이 동일해짐) */
     /* 강사님은 justify-content 속성명을 main (axis) alignment 같은 걸로 바꾸고 싶어하시나 봄(적어도 그게 더 정확하다고 생각하심) */
     justify-content: center;
+
     /* flex-wrap은 줄바꿈 허용? :: wrap, wrap-reverse, nowrap*/
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
+
     /* align-items :: 교차축을 따라 아이템을 배열 :: flex-start(교차축 시작점, default), flex-end(교차축 끝점), center(중앙 지점), baseline(텍스트 기준선에 맞춰서 요소 정렬 - 글자 밑줄 평평하게 한다는 뜻의 baseline) */
-    align-items: flex-start;
+    /* align-items: flex-start; */
+
     /* align-content :: 행/열이 다수일 때 교차축 기준으로 정렬 :: space-between / flex-start / flex-end / center :: 다수일 때 다수인 걸 정렬하는 정의하는 property니 한 개일 때는 아무런 효과x*/
     /* align-content: center; */
 }
@@ -34,18 +42,60 @@ h1 {
     width: 200px;
     height: 200px;
     font-size: 4em;
+    text-align: center;
+
+    /* Flex Sizing Properties :: 요소가 배치될 때의 최초 크기(주축 방향 따라 너비도 되고 높이도 되고) :: flex-basis / flex-grow / flex-shrink */
+    /* width를 지정해봤자 밑의 flex-basis를 따로 지정해버리면 위쪽의 width는 무시된다??! :: flex-basis가 너비의 기준이 된다 */
+    /* "가로인 주축에 걸쳐있기 때문에" flex-basis를 따로 지정할 필요가 생긴다 */
+    flex-basis: 600px;
+
+    /* flex-grow는 공간이 있을 때 요소가 그 공간을 얼마나 차지할지 결정함 */
+    flex-basis: 200px;
+
+    /* flex-shrink는 공간이 부족할 때 요소 크기가 줄어드는 걸 통제함 */
+
+    /* 최소/최대 너비 설정 가능 */
+    /* max-width: 300px; */
+    /* min-width: 50px; */
 }
 
 /* align-self :: 단일 요소에 사용, 플렉스 컨테이너 2+요소에 "개별적으로" 사용, 적용 :: flex-end / */
 /* align-self: flex-end; */
-div:nth-of-type(2) {
+/* div:nth-of-type(2) {
     align-self: center;
 }
-
 div:nth-of-type(3) {
     align-self: flex-end;
 }
-
 div:nth-of-type(5) {
     align-self: flex-start;
+} */
+
+/* flex-grow 용 설명 */
+/* flex-grow는 공간이 있을 때 요소가 그 공간을 얼마나 차지할지 결정함 :: 남는 공간이 있을 때만 커진다(!) */
+/* 증가하는 상대적 높이/너비 개념이라고 이해하면 되는 듯 :: 상대 높이/너비라 창의 크기가 변해도 비율이 깨지지 않는다 :: flex-wrap 자동 적용 - 너무 좁아지면 알아서 튀어나옴... */
+
+/* flex-shrink용 설명 */
+/* flex-shrink는 공간이 부족할 때 요소 크기가 얼마나 줄어들지 결정함 */
+div:nth-of-type(1) {
+    flex-grow: 1;
+    flex-shrink: 2;
+}
+
+/* div:nth-of-type(2) {
+    flex-grow: 1;
+}
+
+div:nth-of-type(3) {
+    flex-grow: 1;
+}
+
+div:nth-of-type(4) {
+    flex-grow: 1;
+} */
+
+div:nth-of-type(5) {
+    flex-grow: 2;
+    /* 0으로도 설정 가능하네? 음수도 있을까? */
+    flex-shrink: 0;
 }
