@@ -20,11 +20,13 @@ h1 {
     flex-direction: row;
     /* justify-content(정렬 방향):: 주축을 따름 :: (default) flex-start(주축 시작점) / flex-end(주축 끝점) / center(중간) / space-between(바깥쪽 여백 다 없애고 요소간 여백 남김, 여백간 간격은 동일) / space-around(바깥쪽 여백, 요소간 여백 남김, 여백간 간격은 거의 동일) / space-evenly(space-around 속성에 여백간 간격이 동일해짐) */
     /* 강사님은 justify-content 속성명을 main (axis) alignment 같은 걸로 바꾸고 싶어하시나 봄(적어도 그게 더 정확하다고 생각하심) */
-    justify-content: flex-start;
+    justify-content: center;
     /* flex-wrap은 줄바꿈 허용? :: wrap, wrap-reverse, nowrap*/
     flex-wrap: wrap;
-    /* align items :: 교차축을 따라 아이템을 배열 :: flex-start(교차축 시작점, default), flex-end(교차축 끝점), center(중앙 지점), baseline(텍스트 기준선에 맞춰서 요소 정렬 - 글자 밑줄 평평하게 한다는 뜻의 baseline) */
-    align-items: center;
+    /* align-items :: 교차축을 따라 아이템을 배열 :: flex-start(교차축 시작점, default), flex-end(교차축 끝점), center(중앙 지점), baseline(텍스트 기준선에 맞춰서 요소 정렬 - 글자 밑줄 평평하게 한다는 뜻의 baseline) */
+    align-items: flex-start;
+    /* align-content :: 행/열이 다수일 때 교차축 기준으로 정렬 :: space-between / flex-start / flex-end / center :: 다수일 때 다수인 걸 정렬하는 정의하는 property니 한 개일 때는 아무런 효과x*/
+    /* align-content: center; */
 }
 
 /* flexbox 하위 요소들은 상위 container 안에 낑겨넣어진다. max height는 500px */
@@ -32,4 +34,18 @@ h1 {
     width: 200px;
     height: 200px;
     font-size: 4em;
+}
+
+/* align-self :: 단일 요소에 사용, 플렉스 컨테이너 2+요소에 "개별적으로" 사용, 적용 :: flex-end / */
+/* align-self: flex-end; */
+div:nth-of-type(2) {
+    align-self: center;
+}
+
+div:nth-of-type(3) {
+    align-self: flex-end;
+}
+
+div:nth-of-type(5) {
+    align-self: flex-start;
 }
