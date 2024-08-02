@@ -2,7 +2,8 @@ body {
     font-family: 'Exo', sans-serif;
 }
 
-h1 {
+h1,
+h2 {
     text-align: center;
 }
 
@@ -50,13 +51,17 @@ h1 {
     flex-basis: 600px;
 
     /* flex-grow는 공간이 있을 때 요소가 그 공간을 얼마나 차지할지 결정함 */
-    flex-basis: 200px;
+    /* flex-basis: 200px; */
 
     /* flex-shrink는 공간이 부족할 때 요소 크기가 줄어드는 걸 통제함 */
 
     /* 최소/최대 너비 설정 가능 */
     /* max-width: 300px; */
     /* min-width: 50px; */
+
+    /* 이 모든 property들을 한꺼번에 다 쓰기 귀찮다? flex로 지정하세요! 
+    flex-grow | flex-shrink | flex-basis 순입니다(인자가 3개일 경우) 
+    (예) 2 2 10% / 더 자세한 건 걍 mdn 사이트 가보시랑게 */
 }
 
 /* align-self :: 단일 요소에 사용, 플렉스 컨테이너 2+요소에 "개별적으로" 사용, 적용 :: flex-end / */
@@ -98,4 +103,28 @@ div:nth-of-type(5) {
     flex-grow: 2;
     /* 0으로도 설정 가능하네? 음수도 있을까? */
     flex-shrink: 0;
+}
+
+
+
+/* Another Example */
+
+main {
+    width: 80%;
+    margin: 0 auto;
+    border: 5px solid black;
+    height: 500px;
+    display: flex;
+}
+
+main .sidebar {
+    background-color: #6930c3;
+    /* border: 2px solid white; */
+    /* flex에 숫자만 덩그러니 있으면 default로 flex-grow 취급 */
+    flex: 1 2 300px;
+}
+
+main .maincontent {
+    background-color: #80ffdb;
+    flex: 2 1 800px;
 }
